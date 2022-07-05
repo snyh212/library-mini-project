@@ -1,52 +1,20 @@
+searchForm = getElementById("searchform");
 
-var searchField = getElementById("input");
+function formSubmit(event) {
+    event.preventDefault();
 
-var searchTerm = searchField.value.trim();
+    var searchInput = getElementById("input").value;
+    var formatInput = getElementById("dropDown").value;
 
-
-
-var outputField = getElementById("content");
-
-displaySearch = function (data) {
-    outputField.textContent = "data";
-};
-
-
-var getSearchResults = function (searchTerm) {
-    var searchUrl = "https://www.loc.gov/search/?q=" + searchTerm + "&fo=json";
-    // var searchUrl = "https://www.loc.gov/search/?q=baseball&fo=json"; THIS WAS USED AS AN EXAMPLE
-
-    fetch(searchUrl).then(function (response) {
-        if (response.ok) {
-            response.json().then(function (data) {
-                console.log(data);
-                displaySearch (data);
-            }); 
-        } else {
-            alert("Error: No Data To Display");
-        }
+    if (!searchInput) {
+        alert("You need an input value!");
+        return;
     }
-    
-    )
+
 }
 
-getSearchResults();
+var searchUrl = "./search-results.html?q=" + searchInput + '&format=' + formatInputVal;
 
+localStorage.assign(searchUrl);
 
-// var getUserRepos = function (user) {
-//     var apiUrl = 'https://api.github.com/users/' + user + '/repos';
-  
-//     fetch(apiUrl)
-//       .then(function (response) {
-//         if (response.ok) {
-//           response.json().then(function (data) {
-//             displayRepos(data, user);
-//           });
-//         } else {
-//           alert('Error: ' + response.statusText);
-//         }
-//       })
-//       .catch(function (error) {
-//         alert('Unable to connect to GitHub');
-//       });
-//   };
+searchForm.addEventListener("submit", formSubmit);
