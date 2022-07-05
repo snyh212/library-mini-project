@@ -10,12 +10,15 @@
     </head>
 
     <body>
-        <main class="container">
-            <div class="row">
+        <main class="container-fluid">
+            <div class="row mt-2 ml-1">
                 <aside class="col-md-3">
-                    <label>Library of Congress Search Engine</label>
-                    <input type="text">
-                    <datalist><option></datalist>
+                    <form>
+                        <label>Library of Congress Search Engine</label>
+                        <input id="input" type="text">
+                        <datalist><option></datalist>
+                            <input type="submit" value="submit">
+                    </form>
                 </aside>
     
                 <article class="col-md-9">
@@ -23,7 +26,7 @@
                     <div class="card">
                         <div class="card-body">
                           <h5 class="card-title">Title</h5>
-                          <p class="card-text">Inner Info.</p>
+                          <p id="content" class="card-text">Inner Info.</p>
                           <button type="button" class="btn btn-primary">More</button>
                         </div>
                     </div>
