@@ -11,13 +11,24 @@
 
     <body>
         <main class="container">
-            <aside class="col-3">
-                <h1>Library of Congress Search Engine</h1>
-            </aside>
-
-            <article class="col-9">
-                <h2>Showing results for </h2>
-            </article>
+            <div class="row">
+                <aside class="col-md-3">
+                    <label>Library of Congress Search Engine</label>
+                    <input type="text">
+                    <datalist><option></datalist>
+                </aside>
+    
+                <article class="col-md-9">
+                    <h2>Showing results for </h2>
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Title</h5>
+                          <p class="card-text">Inner Info.</p>
+                          <button type="button" class="btn btn-primary">More</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </main>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
